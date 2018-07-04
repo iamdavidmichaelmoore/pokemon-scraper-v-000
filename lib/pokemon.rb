@@ -27,6 +27,7 @@ class Pokemon
     data = result.flatten
     pokemon = self.new(id: data[0], name: data[1], type: data[2], hp: data[3], db: database)
     pokemon
+    binding.pry
   end
 
   def alter_hp(hp, database)
