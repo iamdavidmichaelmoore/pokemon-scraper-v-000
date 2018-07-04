@@ -33,7 +33,7 @@ class Pokemon
     result = database.execute("UPDATE pokemon SET hp = ? WHERE hp = 60", hp)
     data = result.flatten
     pokemon = self.new(id: data[0], name: data[1], type: data[3], hp: data[3], db: database)
-    pokemon)
+    pokemon
   end
 
 end
