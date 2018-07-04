@@ -6,7 +6,7 @@ class Pokemon
 
   @@all = []
 
-  def initialize(id:, name:, type:, hp: 60, db:)
+  def initialize(id:, name:, type:, hp: nil, db:)
     @id = id
     @name = name
     @type = type
@@ -18,7 +18,7 @@ class Pokemon
     @@all
   end
 
-  def self.save(name, type, hp, database)
+  def self.save(name, type, database)
     database.execute("INSERT INTO pokemon (name, type) VALUES (?,?,?)", name, type, hp)
   end
 
