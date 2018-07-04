@@ -26,6 +26,7 @@ class Pokemon
     result = database.execute("SELECT * FROM pokemon WHERE pokemon.id = ?", id)
     data = result.flatten
     pokemon = self.new(id: data[0], name: data[1], type: data[2], hp: data[3], db: database)
+    pokemon.save
     pokemon
     binding.pry
   end
