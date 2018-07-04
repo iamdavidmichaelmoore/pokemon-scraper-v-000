@@ -11,6 +11,7 @@ class Pokemon
     @name = name
     @type = type
     @db = db
+    self.class.all << self
   end
 
   def self.all
