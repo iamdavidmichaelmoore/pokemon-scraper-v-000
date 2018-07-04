@@ -33,7 +33,7 @@ class Pokemon
     pokemon = self.find(self.id, database)
     pokemon.hp = hp
     self.class.all << pokemon unless self.class.all.include?(pokemon)
-    database.execute("UPDATE pokemon SET hp = ? WHERE id = ?", self.hp, self.id)
+    database.execute("UPDATE pokemon SET hp = ? WHERE id = ?", pokemon.hp, pokemon.id)
   end
 
 end
