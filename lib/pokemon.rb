@@ -31,7 +31,7 @@ class Pokemon
 
   def alter_hp(hp, database)
     self.hp = hp
-    @@all << self unless self.all.include?(self)
+    self.class.all << self unless self.class.all.include?(self)
     database.execute("UPDATE pokemon SET hp = ? WHERE id = ?", self.hp, self.id)
   end
 
