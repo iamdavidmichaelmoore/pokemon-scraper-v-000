@@ -6,7 +6,7 @@ class Pokemon
 
   @@all = []
 
-  def initialize(id:, name:, type:, db:)
+  def initialize(id:, name:, type:, hp: 60, db:)
     @id = id
     @name = name
     @type = type
@@ -25,7 +25,7 @@ class Pokemon
   def self.find(id, database)
     result = database.execute("SELECT * FROM pokemon WHERE pokemon.id = ?", id)
     data = result.flatten
-    pokemon = self.new(id: data[0], name: data[1], type: data[2], db: database)
+    pokemon = self.new(id: data[0], name: data[1], type: data[2], hp: 60 db: database)
     pokemon
   end
 
