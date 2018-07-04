@@ -65,6 +65,7 @@ describe "Pokemon" do
       pikachu.alter_hp(59, @db)
       binding.pry
       expect(Pokemon.find(1, @db).hp).to eq(59)
+      binding.pry
     end
 
     # Now we alter Magikarp's hp
