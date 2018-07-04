@@ -20,6 +20,7 @@ class Pokemon
 
   def self.save(name, type, hp=60, database)
     database.execute("INSERT INTO pokemon (name, type, hp) VALUES (?,?,?)", name, type, hp)
+    binding.pry
   end
 
   def self.find(id, database)
